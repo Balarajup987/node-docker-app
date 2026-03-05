@@ -12,13 +12,13 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                bat 'npm install'
+                sh 'npm install'
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                bat '''
+                sh '''
                 docker build -t node-docker-app:%BUILD_NUMBER% .
                 docker tag node-docker-app:%BUILD_NUMBER% laxmi916/node-docker-app:%BUILD_NUMBER%
                 '''
@@ -27,7 +27,7 @@ pipeline {
 
         stage('Create container') {
             steps {
-                bat 'docker run -d -p 3000:8080 laxmi916/node-docker-app:%BUILD_NUMBER%'
+                sh 'docker run -d -p 3000:8080 laxmi916/node-docker-app:%BUILD_NUMBER%'
             }
         }
 
