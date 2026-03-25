@@ -5,8 +5,8 @@ pipeline {
 
         stage('Checkout from GitHub') {
             steps {
-                git branch: 'master',
-                url: 'https://github.com/banothuvinodkumar/node-docker-app.git'
+                git branch: 'main',
+                url: 'https://github.com/Balarajup987/node-docker-app.git'
             }
         }
 
