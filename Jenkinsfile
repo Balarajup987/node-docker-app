@@ -16,6 +16,11 @@ pipeline {
             }
         }
 
+        stage('Debug Files') {
+    steps {
+        bat 'dir'
+    }
+}
         stage('Build Docker Image') {
             steps {
                 bat 'docker build -t node-docker-app:%BUILD_NUMBER% .'
