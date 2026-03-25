@@ -24,7 +24,7 @@ pipeline {
 
         stage('Create container') {
             steps {
-                bat 'docker run -d -p 3000:8000 node-docker-app:%BUILD_NUMBER%'
+                bat 'docker run -d -p 8002:8000 node-docker-app:%BUILD_NUMBER%'
             }
         }
 
